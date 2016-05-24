@@ -1,0 +1,24 @@
+{
+  "name" : "foodcheri/routific-bundle",
+  "description" : "Routific PHP SDK bundle",
+  "type" : "symfony-bundle",
+  "authors" : [{
+    "name" : "Floran Pagliai",
+    "email" : "floran@foodcheri.com"
+  }],
+  "keywords" : [
+    "SDK Routific bundle"
+  ],
+  "license" : [
+    "proprietary"
+  ],
+  "require" : {
+    "mashape/unirest-php": "3.*"
+  },
+  "autoload" : {
+    "psr-0" : {
+      "Foodcheri\\SDKRoutificBundle" : ""
+    }
+  },
+  "target-dir" : "Foodcheri/SDKRoutificBundle"
+}

@@ -18,11 +18,18 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('foodcheri_sdk_routific');
+        $rootNode = $treeBuilder->root('routific');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('token_key')
+                    ->isRequired()
+                    ->cannotBeEmpty()
+                ->end()
+                ->scalarNode('api_url')
+                    ->defaultValue('https://api.routific.com/v1')
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }
