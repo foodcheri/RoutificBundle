@@ -26,8 +26,8 @@ class RoutificClient extends Controller
      */
     public function __construct()
     {
-        $this->baseUrl = $this->get('routific.api_url');
-        $this->token = $this->get('routific.token_key');
+        $this->baseUrl = $this->container->getParameter('routific.api_url');
+        $this->token = $this->container->getParameter('routific.token_key');
     }
 
     /**
