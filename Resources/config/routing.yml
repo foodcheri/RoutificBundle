@@ -1,3 +1,0 @@
-foodcheri_sdk_routific_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: FoodcheriSDKRoutificBundle:Default:index }
