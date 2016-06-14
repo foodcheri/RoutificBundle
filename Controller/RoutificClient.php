@@ -10,6 +10,8 @@ namespace Foodcheri\SDKRoutificBundle\Controller;
 use Foodcheri\SDKRoutificBundle\Routific\Endpoint;
 use InvalidArgumentException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Unirest;
 
 class RoutificClient extends Controller
@@ -23,11 +25,14 @@ class RoutificClient extends Controller
     /**
      * ClientController constructor.
      *
+     * @internal param Container $container
+     *
+     * @param Container|ContainerInterface $container
      */
-    public function __construct()
+    public function __construct(ContainerInterface $container)
     {
-        $this->baseUrl = $this->container->getParameter('routific.api_url');
-        $this->token = $this->container->getParameter('routific.token_key');
+        $this->baseUrl = $container->getParameter('api_url');
+        $this->token = $container->getParameter('token_key');
     }
 
     /**
@@ -53,7 +58,6 @@ class RoutificClient extends Controller
             'Content-Type' => 'application/json',
             'Authorization' => 'bearer ' . $this->token,
         );
-
         $response = Unirest\Request::post($queryUrl, $headers, $body);
 
         //Error handling using HTTP status codes

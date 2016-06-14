@@ -1,4 +1,4 @@
 services:
-#    foodcheri_sdk_routific.example:
-#        class: Foodcheri\SDKRoutificBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    foodcheri_sdk_routific.client:
+        class: Foodcheri\SDKRoutificBundle\Controller\RoutificClient
+        arguments: [@service_container]

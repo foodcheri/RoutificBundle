@@ -37,7 +37,7 @@ routific:
 Instantiate the Routific client :
 
 ```
-$clientRoutific = new RoutificClient();
+$clientRoutific = $this->get('foodcheri_sdk_routific.client');
 ```
 
 To resolve Vehicle Routing Problem, instantiate a VehicleRoutingProblem Enpoint object :
@@ -76,7 +76,7 @@ $problem->addVehicle("vehicle_1", array(
         "lng" => -123.1363085
     ),
     "end_location" => array(
-		"id" => "hub id"
+		"id" => "hub id",
         "name" => "hub name",
         "lat" => 49.227607,
         "lng" => -123.1363085
@@ -86,7 +86,7 @@ $problem->addVehicle("vehicle_1", array(
     "min_visits" => 10,
     "capacity" => 20,
     "type" => ["A", "B"],
-    "speed" => "bike"
+    "speed" => "bike",
     "strict_start" => true,
     "break_start" => "12:00",
     "break_end" => "13:30",
