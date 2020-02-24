@@ -1,4 +1,4 @@
 services:
     foodcheri_sdk_routific.client:
         class: Foodcheri\SDKRoutificBundle\Controller\RoutificClient
-        arguments: [@service_container]
+        arguments: ["@service_container"]
